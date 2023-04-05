@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+
+\usepackage[left=65pt, right=65pt, top=80pt, bottom=70pt]{geometry}
+\usepackage{kotex} % 한국어 사용.
+\usepackage{lastpage} % 마지막 페이지 번호 가져오기.
+\usepackage{xcolor} % 색 지정.
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Team \# 2023001}
+\fancyhead[R]{Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{firstpage}
+{
+	\newgeometry{top=10pt,left=65pt,right=65pt} % 페이지 여백 변경
+	\renewcommand{\footrulewidth}{0pt}
+	\renewcommand{\headsep}{1em}
+	\renewcommand{\headheight}{15em}
+	\fancyhf{}
+	\fancyhead[L]{\hskip 3em \begin{tabular}{ l }
+			For office use only \\
+			T1 \rule{7em}{.4pt} \\
+			T2 \rule{7em}{.4pt} \\
+			T3 \rule{7em}{.4pt} \\
+			T4 \rule{7em}{.4pt} \\
+	\end{tabular}}
+	\fancyhead[R]{\begin{tabular}{ l }
+			For office use only \\
+			F1 \rule{7em}{.4pt} \\
+			F2 \rule{7em}{.4pt} \\
+			F3 \rule{7em}{.4pt} \\
+			F4 \rule{7em}{.4pt} \\
+		\end{tabular}\hskip 3em}
+	\fancyhead[C]{Team Control Number\\%
+		\huge\bfseries 2023001}
+	\renewcommand{\headrulewidth}{1.5pt}
+	\renewcommand{\headrule}{\vskip 1em\makebox[\textwidth]{%
+			\color{gray!60}{\rule{\dimexpr\headwidth-6em}{\headrulewidth}}}} % headrule의 길이를 변경함.
+}
+
+\begin{document}
+	\thispagestyle{firstpage}
+	첫 번째 페이지는 다른 page style을 적용하였다.	
+	\begin{itemize}
+		\item 첫 번째 페이지 스타일은 \texttt{\textbackslash headheight}을 15em으로 크게 설정하였다.
+		\item Header의 왼쪽과 오른쪽에는 각각 For office use only를 입력하고, 표를 이용해 그린다.
+		\item Header의 가운데에는 Team Control Number를 입력하고, 밑에 글자 크기를 크게, 두껍게 팀 코드를 출력한다.
+		\item Footer에는 아무것도 적지 않는다. (\texttt{\textbackslash footrulewidth}도 0pt로 설정.)
+	\end{itemize}
+	\newpage
+	두 번째 페이지부터는 fancy 페이지 스타일이 적용된다.
+	\begin{itemize}
+		\item \texttt{\textbackslash headheight}는 기본값(12pt)을 사용한다.
+		\item \texttt{\textbackslash footrulewidth}를 0.4pt로 설정하여 footer에도 줄을 그린다.
+		\item Header의 왼쪽에는 ``Team \textbackslash \# 팀 코드''를 입력한다.
+		\item Header의 오른쪽에는 ``Page \textbackslash thepage\textbackslash\ of \textbackslash pageref\{LastPage\}''를 입력한다.
+	\end{itemize}
+\end{document}
